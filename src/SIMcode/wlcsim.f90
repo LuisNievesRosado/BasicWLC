@@ -85,6 +85,9 @@
       DOUBLE PRECISION FPT_DIST ! l1 dist to trigger collision
       INTEGER COL_TYPE ! what kind of collision checking to use
 
+!     Hydrodynamic variables
+      DOUBLE PRECISION a           ! Bead hydrodynamic radius
+      INTEGER HYDRO                ! Flag for hydrodynamic interactions
 
 !     Load in the parameters for the simulation
 
@@ -115,6 +118,10 @@
       read (unit=5, fmt=*) FPT_DIST
       read (unit=5, fmt='(2(/))')
       read (unit=5, fmt=*) COL_TYPE
+      read (unit=5, fmt='(2(/))')
+      read (unit=5, fmt=*) HYDRO
+      read (unit=5, fmt='(2(/))')
+      read (unit=5, fmt=*) a
       close(5)
       call getpara(PARA,DT,SIMTYPE)
       DT0=DT
@@ -133,6 +140,11 @@
       else
          ALLOCATE(HAS_COLLIDED(1,1))
          HAS_COLLIDED = -1.0d+0
+      endif
+      
+      if (HYDRO.EQ.1) then
+         ALLOCATE(D(NT,NT,3,3))
+         ALLOCATE(sigB(NT,NT,3,3))
       endif
 
 !     Setup the initial condition
@@ -251,7 +263,7 @@
          endif
          if (NSTEP.EQ.0) then
             call BDsim(R,U,NT,N,NP,TIME,TSAVE,DT,BROWN,INTON,IDUM, &
-                       PARA,SIMTYPE,HAS_COLLIDED,FPT_DIST,COL_TYPE)
+                       PARA,SIMTYPE,HAS_COLLIDED,FPT_DIST,COL_TYPE,HYDRO,a)
          endif
 
 !     Save the conformation and the metrics

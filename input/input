@@ -72,5 +72,10 @@
  !-Record 18       Algorithm for collision detection: 0) NONE 1) brute force,
  !  COL_TYPE       2) k-d tree, 3) Bruno's O(n) v1,
   1
-
+ !-Record 19       Flag for hydrodynamic interactions. HYDRO = 0 if off and =1 if on
+ !  HYDRO
+  0
+ !-Record 20       Bead hydrodynamic radius. Should be less or equal than delta/2
+ !  a
+  0.3
  ! ----------------------------------------------------
