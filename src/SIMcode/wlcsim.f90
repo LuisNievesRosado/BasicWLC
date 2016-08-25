@@ -142,11 +142,6 @@
          HAS_COLLIDED = -1.0d+0
       endif
       
-      if (HYDRO.EQ.1) then
-         ALLOCATE(D(NT,NT,3,3))
-         ALLOCATE(sigB(NT,NT,3,3))
-      endif
-
 !     Setup the initial condition
 
       call initcond(R,U,NT,N,NP,IDUM,FRMFILE,PARA)

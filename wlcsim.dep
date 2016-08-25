@@ -12,6 +12,8 @@ src/SIMcode/stressp.o :
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/SIMcode/stressp.f90 -o src/SIMcode/stressp.o
 src/MCcode/MC_capsid_ex.o : 
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/MCcode/MC_capsid_ex.f90 -o src/MCcode/MC_capsid_ex.o
+src/BDcode/diffcalc.o : 
+	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/BDcode/diffcalc.f90 -o src/BDcode/diffcalc.o
 src/MCcode/MC_move.o :  \
 	src/third_party/mt19937.o
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/MCcode/MC_move.f90 -o src/MCcode/MC_move.o
@@ -22,6 +24,8 @@ src/BDcode/concalc.o :
 src/BDcode/BDsim.o :  \
 	src/third_party/mt19937.o
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/BDcode/BDsim.f90 -o src/BDcode/BDsim.o
+src/BDcode/betacalc.o : 
+	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/BDcode/betacalc.f90 -o src/BDcode/betacalc.o
 src/SIMcode/r_to_erg.o : 
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/SIMcode/r_to_erg.f90 -o src/SIMcode/r_to_erg.o
 src/SIMcode/debugging.o :  \
@@ -54,6 +58,8 @@ src/SIMcode/gasdev.o :
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/SIMcode/gasdev.f90 -o src/SIMcode/gasdev.o
 src/MCcode/MC_elas.o : 
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/MCcode/MC_elas.f90 -o src/MCcode/MC_elas.o
+src/BDcode/brownchol.o : 
+	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/BDcode/brownchol.f90 -o src/BDcode/brownchol.o
 src/BDcode/force_ponp.o : 
 	gfortran -c -ggdb -Jsrc -Isrc -Isrc/third_party -cpp   src/BDcode/force_ponp.f90 -o src/BDcode/force_ponp.o
 src/DATAcode/MINV.o : 
